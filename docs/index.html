@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>mgn-tab.js</title>
+    <meta name="description" content="mgn-tab.js は、jQueryを必要としないタブ機能のライブラリです。">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style>
+		body { background: #FFF; margin: 0px; overflow: hidden; overflow: auto;}
+		a { color: #EC4500; text-decoration: underline; cursor: pointer; }
+		img { max-width: 100%; height: auto; }
+		main { padding: 40px 20px; }
+		main a { font-weight: bold; }
+		main section { margin-top: 60px; }
+		main section > section { margin-top: 40px; }
+		main h1, h2, h3 { margin: 0; padding: 0; }
+		main h2 { font-size: 1.75em; margin-bottom: 20px; border-bottom: 4px solid #333; }
+		main h3 { margin-bottom: 20px; font-size: 1em; background: #333; color: #FFF; padding: 10px; }
+		main h3:before { content: ":: ";  }
+		main pre { min-width: 400px; position: relative; display: inline-block; margin: 5px 0; background: #F9F9F9; border: 1px solid #DDD; padding: 10px 20px 20px; line-height: ; }
+		main pre[data-type]:before { content: attr(data-type); display: inline-block; position: absolute; top: 0; left: 0; line-height: 1; padding: 2px 5px; background: #999; color: #FFF; font-size: 0.8em; letter-spacing: 0.05em; }
+		main pre mark { background: rgba(236,69,0,0.2); font-weight: bold; display: inline-block; padding: 0 3px; }
+		footer { padding: 20px; background: #F7F7F7; }
+		footer p { font-size: 0.75em; }
+
+		.j-tab > ul,
+		.j-tab2 > ul {
+		    border-bottom: 1px solid #DDD;
+		    margin-bottom: 20px;
+		}
+		.j-tab > ul li,
+		.j-tab2 > ul li {
+			display: inline-block;
+			margin-bottom: -1px;
+		}
+		.j-tab_btn,
+		.j-tab2_btn {
+			border-radius: 1px 1px 0 0;
+			border: 1px solid #DDD;
+			display: block;
+			padding: 10px 20px;
+			background: #f7f7f7;
+			color: #111;
+		}
+		.j-tab_btn.ds-active, .j-tab_btn:hover,
+		.j-tab2_btn.ds-active, .j-tab2_btn:hover {
+			color: #ec4501;
+			background: #FFF;
+			border-bottom: 1px solid #FFF;
+			text-decoration: none;
+		}
+	</style>
+
+</head>
+<body>
+
+	<main>
+
+		<h1>mgn-tab</h1>
+		<p>mgn-tab.js は、jQueryを必要としないタブ機能のライブラリです。</p>
+		<p><a href="https://github.com/frontend-isobar-jp/mgn-tab">https://github.com/frontend-isobar-jp/mgn-tab</a></p>
+
+		<section>
+			<h2>Default</h2>
+<div><pre data-type="javascript"><code>
+let dsTab = <mark>new mgnTab('.tab');</mark>
+</code></pre></div>
+<div><pre data-type="HTML"><code>
+&lt;div class="<mark>tab</mark>"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a class="<mark>tab_btn</mark>"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="<mark>tab_btn</mark>"&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="<mark>tab_btn</mark>"&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="<mark>tab_detail</mark>"&gt;
+        Tab 1 Detail
+    &lt;/div&gt;
+    &lt;div class="<mark>tab_detail</mark>"&gt;
+        Tab 2 Detail
+    &lt;/div&gt;
+    &lt;div class="<mark>tab_detail</mark>"&gt;
+        Tab 3 Detail
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+
+			<div class="j-tab">
+			    <ul>
+			        <li><a class="j-tab_btn">Tab 1</a></li>
+			        <li><a class="j-tab_btn">Tab 2</a></li>
+			        <li><a class="j-tab_btn">Tab 3</a></li>
+			    </ul>
+			    <div class="j-tab_detail">
+			        Tab 1 Detail
+			    </div>
+			    <div class="j-tab_detail">
+			        Tab 2 Detail
+			    </div>
+			    <div class="j-tab_detail">
+			        Tab 3 Detail
+			    </div>
+			</div>
+		</section>
+
+		<section>
+			<h2>Option</h2>
+<div><pre data-type="javascript"><code>
+let dsTab2 = new mgnTab(
+    <mark>'.tab2',</mark>
+    <mark>{</mark>
+    <mark>    fadeSpeed: 600</mark>
+    <mark>}</mark>
+);
+
+dsTab2.Open( <mark>".open"</mark> );
+
+dsTab2.OpenEnd = function(){
+    console.log("OpenEnd");
+};
+</code></pre></div>
+<div><pre data-type="HTML"><code>
+&lt;div class="<mark>tab2</mark>"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a class="j-tab2_btn"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="j-tab2_btn <mark>open</mark>"&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="j-tab2_btn"&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="j-tab2_detail"&gt;
+        Tab 1 Detail
+    &lt;/div&gt;
+    &lt;div class="j-tab2_detail"&gt;
+        Tab 2 Detail
+    &lt;/div&gt;
+    &lt;div class="j-tab2_detail"&gt;
+        Tab 3 Detail
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+
+			<div class="j-tab2">
+			    <ul>
+			        <li><a class="j-tab2_btn">Tab 1</a></li>
+			        <li><a class="j-tab2_btn open">Tab 2</a></li>
+			        <li><a class="j-tab2_btn">Tab 3</a></li>
+			    </ul>
+			    <div class="j-tab2_detail">
+			        Tab 1 Detail
+			    </div>
+			    <div class="j-tab2_detail">
+			        Tab 2 Detail
+			    </div>
+			    <div class="j-tab2_detail">
+			        Tab 3 Detail
+			    </div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer>
+		<p><a href="https://megane-template.com/" target="_blank">Megane Template</a></p>
+		<p>Copyrights Dentsu Isobar. Allrights reserved.</p>
+	</footer>
+
+	<script src="./bundle.js"></script>
+
+</body>
+</html>
