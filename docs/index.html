@@ -64,22 +64,22 @@
 		<section>
 			<h2>Default</h2>
 <div><pre data-type="javascript"><code>
-let dsTab = <mark>new mgnTab('.tab');</mark>
+let tab = <mark>new mgnTab('.j-tab');</mark>
 </code></pre></div>
 <div><pre data-type="HTML"><code>
-&lt;div class="<mark>tab</mark>"&gt;
+&lt;div class="<mark>j-tab</mark>"&gt;
     &lt;ul&gt;
-        &lt;li&gt;&lt;a class="<mark>tab_btn</mark>"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a class="<mark>tab_btn</mark>"&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a class="<mark>tab_btn</mark>"&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="<mark>j-tab_btn</mark>"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="<mark>j-tab_btn</mark>"&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="<mark>j-tab_btn</mark>"&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;div class="<mark>tab_detail</mark>"&gt;
+    &lt;div class="<mark>j-tab_detail</mark>"&gt;
         Tab 1 Detail
     &lt;/div&gt;
-    &lt;div class="<mark>tab_detail</mark>"&gt;
+    &lt;div class="<mark>j-tab_detail</mark>"&gt;
         Tab 2 Detail
     &lt;/div&gt;
-    &lt;div class="<mark>tab_detail</mark>"&gt;
+    &lt;div class="<mark>j-tab_detail</mark>"&gt;
         Tab 3 Detail
     &lt;/div&gt;
 &lt;/div&gt;
@@ -106,21 +106,21 @@ let dsTab = <mark>new mgnTab('.tab');</mark>
 		<section>
 			<h2>Option</h2>
 <div><pre data-type="javascript"><code>
-let dsTab2 = new mgnTab(
-    <mark>'.tab2',</mark>
+let tab2 = new mgnTab(
+    <mark>'.j-tab2',</mark>
     <mark>{</mark>
     <mark>    fadeSpeed: 600</mark>
     <mark>}</mark>
 );
 
-dsTab2.Open( <mark>".open"</mark> );
+tab2.Open( <mark>".open"</mark> );
 
-dsTab2.OpenEnd = function(){
+tab2.OpenEnd = function(){
     console.log("OpenEnd");
 };
 </code></pre></div>
 <div><pre data-type="HTML"><code>
-&lt;div class="<mark>tab2</mark>"&gt;
+&lt;div class="<mark>j-tab2</mark>"&gt;
     &lt;ul&gt;
         &lt;li&gt;&lt;a class="j-tab2_btn"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a class="j-tab2_btn <mark>open</mark>"&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
