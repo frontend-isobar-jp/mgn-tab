@@ -13,6 +13,9 @@ ___
 npm i mgn-tab -S
 ```
 
+## Or Download raw data
+[↓ download "mgn-tab.js"](https://raw.githubusercontent.com/frontend-isobar-jp/mgn-tab/master/src/mgn-tab.js)
+
 ___
 
 # Import
