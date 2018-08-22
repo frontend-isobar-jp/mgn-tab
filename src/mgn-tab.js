@@ -64,10 +64,10 @@ License: Dentsu Isobar All Rights Reserved.
 
             }
 
-            this.AddClass(DETAIL[0],"ds-active");
+            this.AddClass(DETAIL[0],"active");
             DETAIL[0].style.display = "block";
 
-            this.AddClass(BTN[0],"ds-active");
+            this.AddClass(BTN[0],"active");
 
         }
 
@@ -100,9 +100,9 @@ License: Dentsu Isobar All Rights Reserved.
             var THIS_BTN = PARENT.querySelectorAll( this.btnElm )[k];
             var THIS_DETAIL = PARENT.querySelectorAll( this.detailElm )[k];
 
-            this.RemoveClass(THIS_BTN,"ds-active");
+            this.RemoveClass(THIS_BTN,"active");
 
-            this.RemoveClass(THIS_DETAIL,"ds-active");
+            this.RemoveClass(THIS_DETAIL,"active");
             THIS_DETAIL.style.display = "none";
             THIS_DETAIL.style.opacity = 0;
 
@@ -113,7 +113,7 @@ License: Dentsu Isobar All Rights Reserved.
 
         this.OpenStart( INDEX );
 
-        this.AddClass(TARGET,"ds-active");
+        this.AddClass(TARGET,"active");
 
         var TARGET_DETAIL = PARENT.querySelectorAll( this.detailElm )[ INDEX ];
         TARGET_DETAIL.style.display = "block";
