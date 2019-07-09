@@ -88,7 +88,8 @@ License: Dentsu Isobar All Rights Reserved.
             return false;
         }
 
-        var TARGET = element.currentTarget ? element.currentTarget : document.querySelectorAll( element )[0];
+        // var TARGET = element.currentTarget ? element.currentTarget : document.querySelectorAll( element )[0];
+        var TARGET = element.currentTarget ? element.currentTarget : element;
         var PARENT = this.GetParent( TARGET, this.selector );
 
         var INDEX = Array.prototype.indexOf.call( PARENT.querySelectorAll( this.btnElm ), TARGET );
